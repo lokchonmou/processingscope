@@ -24,24 +24,23 @@
 
 void setup() {
 
-  size(1000, 700);
+  size(640, 480);
   //設定上下限和格線等
   y_low_limit = 0;
   y_up_limit = 1023;
-  delay_value = 5;  //輸入在arduino端的delay值
-  y_grid = 100;     
+  y_grid = 100;
+  
+  delay_value = 5;  //輸入在arduino端的delay值   
   x_grid = 1000;      //輸入每多少ms一個grid
+  
   no_of_data = 2;
-  blank_space = 0.05;   //上下左右留白多少, 0.05=5%
+  blank_space = 0.08;   //上下左右留白多少, 0.05=5%
   //---------------------------------
   calibration();
-  
+  //---------------------------------
   println(Serial.list());
   myPort = new Serial(this, Serial.list()[9], 115200); //有需要可修改方括, 得出不同的com頭, 也可修改bitrate
   myPort.bufferUntil('\n');  //收到enter就處理
   //---------------------------------
   
 }
-
-
-
