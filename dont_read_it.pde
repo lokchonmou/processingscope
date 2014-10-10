@@ -45,7 +45,7 @@ void serialEvent(Serial myPort) {  //每次serial收到之後運行
     for (int i = 0; i < data.length; i++) {
       print(data[i] + "    "  );
       stroke(i*100/data.length, 100, 100);
-        line(map(x-1,0,width,blank_space*width,(1-blank_space)*width), map(last_data[i], y_low_limit, y_up_limit, (1-blank_space)*height, blank_space*height), map(x,0,width,blank_space*width,(1-blank_space)*width), map(data[i], y_low_limit, y_up_limit, (1-blank_space)*height, blank_space*height));
+      line(map(x-1,0,width,blank_space*width,(1-blank_space)*width), map(last_data[i], y_low_limit, y_up_limit, (1-blank_space)*height, blank_space*height), map(x,0,width,blank_space*width,(1-blank_space)*width), map(data[i], y_low_limit, y_up_limit, (1-blank_space)*height, blank_space*height));
     }
     println();
     x++;
