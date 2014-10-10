@@ -16,14 +16,16 @@ void refresh() {    //重填背景, 之後再劃上座標線
   stroke(0);
   fill(255);
   rect(blank_space*width,blank_space*height, (1- blank_space*2)*width, (1- blank_space*2)*height);
-  stroke(100);
+  stroke(150);
   strokeWeight(1);
   fill(0);
   textSize(12);
+  textAlign(RIGHT, BOTTOM); 
   for (float i = y_low_limit; i <= y_up_limit; i+=y_grid) {
         line(blank_space*width, map(i, y_low_limit, y_up_limit, (1-blank_space)*height, blank_space*height), (1-blank_space)*width, map(i, y_low_limit, y_up_limit, height*(1-blank_space), height*blank_space));
-        text(str(int(i)), blank_space*width, map(i, y_low_limit, y_up_limit, height*(1-blank_space), blank_space*width));
+        text(str(int(i)), blank_space*width, map(i, y_low_limit, y_up_limit, height*(1-blank_space), blank_space*height));
   }
+  textAlign(CENTER, TOP); 
   for ( long j = 0; j <= width; j+=x_grid/delay_value) {
         line(map(j,0,width,blank_space*width,(1-blank_space)*width), blank_space*height, map(j,0,width,blank_space*width,(1-blank_space)*width), (1-blank_space)*height);
         text(int((counter*width + j)*delay_value)+"ms", map(j,0,width,blank_space*width,(1-blank_space)*width), (1-blank_space)*height);
@@ -58,7 +60,6 @@ void serialEvent(Serial myPort) {  //每次serial收到之後運行
 
 
 void calibration(){
-  textAlign(LEFT, LEFT); //字體對左
   data = new float[no_of_data];
   last_data = new float[no_of_data];
   refresh(); //自訂函數, 見下文
