@@ -9,4 +9,4 @@ version 2.0 Feature:<br />
 3. set a gray blank space to make the graph similar to MATLAB style<br />
 4. can show multi data at the same graph, user can add data easily<br />
 
-<img src="https://github.com/lokchonmou/processingscope/blob/master/%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202014-10-09%20%E4%B8%8B%E5%8D%8806.47.15.png">
+<img src="https://raw.githubusercontent.com/lokchonmou/processingscope/master/screenshot.png">
